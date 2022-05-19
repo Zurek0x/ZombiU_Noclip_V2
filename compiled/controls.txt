@@ -1,0 +1,14 @@
+-_ USE NUMPAD KEYS TO MOVE _-
+
+NUMPAD 9 [ Move Up ]
+NUMPAD 3 [ Move Down ]
+
+Numpad 8 [ Move Forward ]
+Numpad 2 [ Move Backward ]
+
+Numpad 4 [ Move Left ]
+Numpad 6 [ Move Right ]
+
+< Custom keys >
+Numpad 5 [ Enter Specific Cord ]
+* Does Not Work *

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="38">
+  <Forms>
+    <UDF1 Class="TCEForm" Encoding="Ascii85">OJrbR2nldAU:MM2b.}cxWeIh0Gi32eO*Ft$Wn{Y6%{mcIVLrjY9Fkwal+AgInNpGg/gz.[7L.V;:dpp6vpVPJ/QK81sHiY-x#j1T:z.m^=8!Od8JQ*i3:9A</UDF1>
+  </Forms>
+  <CheatEntries>
+    <CheatEntry>
+      <ID>750</ID>
+      <Description>"Enable 3 : Freeze Player Model"</Description>
+      <LastState/>
+      <Color>0000FF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>//Could be used to put the player and gun model higher or lower than the camera view for
+//screenshots without playermodel. Variable would have to be assigned and value changed from actual player pos.
+//Run down or up stairs to understand.
+
+[ENABLE]
+
+aobscanmodule(pmlock1,ZOMBI.exe,0F 29 01 0F 29 51 10 0F 29 71) // should be unique
+alloc(newmem,$1000)
+
+label(code)
+label(return)
+//
+aobscanmodule(pmlock2,ZOMBI.exe,0F 29 71 20 5D) // should be unique
+alloc(newmema,$1000)
+
+label(codea)
+label(returna)
+
+//
+newmem:
+
+code:
+  //movaps [ecx],xmm0
+ // movaps [ecx+10],xmm2
+  jmp return
+
+pmlock1:
+  jmp code
+  nop
+  nop
+return:
+registersymbol(pmlock1)
+//
+newmema:
+
+codea:
+ // movaps [ecx+20],xmm6
+  pop ebp
+  jmp returna
+
+pmlock2:
+  jmp codea
+returna:
+registersymbol(pmlock2)
+//
+[DISABLE]
+
+pmlock1:
+  db 0F 29 01 0F 29 51 10
+
+unregistersymbol(pmlock1)
+dealloc(newmem)
+//
+pmlock2:
+  db 0F 29 71 20 5D
+
+unregistersymbol(pmlock2)
+dealloc(newmema)
+//
+
+{
+// ORIGINAL CODE - INJECTION POINT: "ZOMBI.exe"+18D4F3
+
+"ZOMBI.exe"+18D4D5: 0F 28 D6           -  movaps xmm2,xmm6
+"ZOMBI.exe"+18D4D8: 0F 14 D3           -  unpcklps xmm2,xmm3
+"ZOMBI.exe"+18D4DB: 0F 28 CD           -  movaps xmm1,xmm5
+"ZOMBI.exe"+18D4DE: 0F 14 CC           -  unpcklps xmm1,xmm4
+"ZOMBI.exe"+18D4E1: 0F 28 C2           -  movaps xmm0,xmm2
+"ZOMBI.exe"+18D4E4: 0F 15 F3           -  unpckhps xmm6,xmm3
+"ZOMBI.exe"+18D4E7: 0F 15 EC           -  unpckhps xmm5,xmm4
+"ZOMBI.exe"+18D4EA: 0F 14 C1           -  unpcklps xmm0,xmm1
+"ZOMBI.exe"+18D4ED: 0F 15 D1           -  unpckhps xmm2,xmm1
+"ZOMBI.exe"+18D4F0: 0F 14 F5           -  unpcklps xmm6,xmm5
+// ---------- INJECTING HERE ----------
+"ZOMBI.exe"+18D4F3: 0F 29 01           -  movaps [ecx],xmm0
+"ZOMBI.exe"+18D4F6: 0F 29 51 10        -  movaps [ecx+10],xmm2
+// ---------- DONE INJECTING  ----------
+"ZOMBI.exe"+18D4FA: 0F 29 71 20        -  movaps [ecx+20],xmm6
+"ZOMBI.exe"+18D4FE: 5D                 -  pop ebp
+"ZOMBI.exe"+18D4FF: C2 04 00           -  ret 0004
+"ZOMBI.exe"+18D502: CC                 -  int 3
+"ZOMBI.exe"+18D503: CC                 -  int 3
+"ZOMBI.exe"+18D504: CC                 -  int 3
+"ZOMBI.exe"+18D505: CC                 -  int 3
+"ZOMBI.exe"+18D506: CC                 -  int 3
+"ZOMBI.exe"+18D507: CC                 -  int 3
+"ZOMBI.exe"+18D508: CC                 -  int 3
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>757</ID>
+      <Description>"Enable 2 : Y Axis Manual Mode [Disable Automatic Control Of Axis]"</Description>
+      <LastState/>
+      <Color>80FFFF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : ZOMBI.exe
+  Version: 
+  Date   : 2021-12-02
+  Author : dnfki
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,ZOMBI.exe,89 41 38 8B 42 3C 89 41 3C 89) // should be unique
+alloc(newmem,$1000)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  //mov [ecx+38],eax
+  mov eax,[edx+3C]
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 89 41 38 8B 42 3C
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: ZOMBI.exe+B5B23
+
+ZOMBI.exe+B5B01: 89 41 28        - mov [ecx+28],eax
+ZOMBI.exe+B5B04: 8B 42 0C        - mov eax,[edx+0C]
+ZOMBI.exe+B5B07: 89 41 0C        - mov [ecx+0C],eax
+ZOMBI.exe+B5B0A: 8B 42 1C        - mov eax,[edx+1C]
+ZOMBI.exe+B5B0D: 89 41 1C        - mov [ecx+1C],eax
+ZOMBI.exe+B5B10: 8B 42 2C        - mov eax,[edx+2C]
+ZOMBI.exe+B5B13: 89 41 2C        - mov [ecx+2C],eax
+ZOMBI.exe+B5B16: F3 0F 7E 42 30  - movq xmm0,[edx+30]
+ZOMBI.exe+B5B1B: 66 0F D6 41 30  - movq [ecx+30],xmm0
+ZOMBI.exe+B5B20: 8B 42 38        - mov eax,[edx+38]
+// ---------- INJECTING HERE ----------
+ZOMBI.exe+B5B23: 89 41 38        - mov [ecx+38],eax
+// ---------- DONE INJECTING  ----------
+ZOMBI.exe+B5B26: 8B 42 3C        - mov eax,[edx+3C]
+ZOMBI.exe+B5B29: 89 41 3C        - mov [ecx+3C],eax
+ZOMBI.exe+B5B2C: 89 4D 08        - mov [ebp+08],ecx
+ZOMBI.exe+B5B2F: 83 C1 40        - add ecx,40
+ZOMBI.exe+B5B32: 5D              - pop ebp
+ZOMBI.exe+B5B33: E9 28 28 FC FF  - jmp ZOMBI.exe+78360
+ZOMBI.exe+B5B38: CC              - int 3 
+ZOMBI.exe+B5B39: CC              - int 3 
+ZOMBI.exe+B5B3A: CC              - int 3 
+ZOMBI.exe+B5B3B: CC              - int 3 
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>758</ID>
+      <Description>"Enable 1 : X &amp; Z Axis Manual Mode [Disable Automatic Control Of Axis]"</Description>
+      <LastState/>
+      <Color>80FFFF</Color>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : ZOMBI.exe
+  Version: 
+  Date   : 2021-12-02
+  Author : dnfki
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(INJECT,ZOMBI.exe,66 0F D6 41 30 8B 42 38 89 41 38 8B 42 3C 89 41 3C 89) // should be unique
+alloc(newmem,$1000)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  //movq [ecx+30],xmm0
+  jmp return
+
+INJECT:
+  jmp newmem
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 66 0F D6 41 30
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: ZOMBI.exe+B5B1B
+
+ZOMBI.exe+B5AF9: 66 0F D6 41 20  - movq [ecx+20],xmm0
+ZOMBI.exe+B5AFE: 8B 42 28        - mov eax,[edx+28]
+ZOMBI.exe+B5B01: 89 41 28        - mov [ecx+28],eax
+ZOMBI.exe+B5B04: 8B 42 0C        - mov eax,[edx+0C]
+ZOMBI.exe+B5B07: 89 41 0C        - mov [ecx+0C],eax
+ZOMBI.exe+B5B0A: 8B 42 1C        - mov eax,[edx+1C]
+ZOMBI.exe+B5B0D: 89 41 1C        - mov [ecx+1C],eax
+ZOMBI.exe+B5B10: 8B 42 2C        - mov eax,[edx+2C]
+ZOMBI.exe+B5B13: 89 41 2C        - mov [ecx+2C],eax
+ZOMBI.exe+B5B16: F3 0F 7E 42 30  - movq xmm0,[edx+30]
+// ---------- INJECTING HERE ----------
+ZOMBI.exe+B5B1B: 66 0F D6 41 30  - movq [ecx+30],xmm0
+// ---------- DONE INJECTING  ----------
+ZOMBI.exe+B5B20: 8B 42 38        - mov eax,[edx+38]
+ZOMBI.exe+B5B23: 89 41 38        - mov [ecx+38],eax
+ZOMBI.exe+B5B26: 8B 42 3C        - mov eax,[edx+3C]
+ZOMBI.exe+B5B29: 89 41 3C        - mov [ecx+3C],eax
+ZOMBI.exe+B5B2C: 89 4D 08        - mov [ebp+08],ecx
+ZOMBI.exe+B5B2F: 83 C1 40        - add ecx,40
+ZOMBI.exe+B5B32: 5D              - pop ebp
+ZOMBI.exe+B5B33: E9 28 28 FC FF  - jmp ZOMBI.exe+78360
+ZOMBI.exe+B5B38: CC              - int 3 
+ZOMBI.exe+B5B39: CC              - int 3 
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Camera_Y-Axis"</Description>
+      <LastState Value="0" RealAddress="00DA4C68"/>
+      <Color>00FFFF</Color>
+      <VariableType>Float</VariableType>
+      <Address>ZOMBI.exe+9A4C68</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>752</ID>
+      <Description>"Camera_X-Axis"</Description>
+      <LastState Value="0" RealAddress="00DA4C60"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>00FFFF</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>DA4C60</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>753</ID>
+      <Description>"Camera_Z-Axis"</Description>
+      <LastState Value="0" RealAddress="00DA4C64"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <Color>00FFFF</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>DA4C64</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
