@@ -3,6 +3,20 @@ This is a Mod/Cheat for the Game Zombi & ZombiU Written in C++ and Assembly.
 
 ![alt text](https://raw.githubusercontent.com/Zurek0x/ZombiU_Noclip/main/media/logo.webp)
 
+# Known Issues/Bugs
+```
+1a. The player is not frozen (Arms/Flashlight)
+- There is currently no fix for this as freezing the Arms/Flashlight/Etc will force the camera to revert to its original position or crash the game
+
+2a. Camera speed will slow down randomly
+- The camera speed will slow when coming up to a certain XYZ Axis.
+- We are currently working on a fix for this, You just have to move a bit to the RIGHT/LEFT/FORWARD/BACK/UP/DOWN until the speed restores itself
+
+3a. Program will randomly crash
+- Make sure you have ALL THE C++ Redistributable installed
+- Also make sure your ZOMBI.EXE (ZombiU Game) is open before you launch the program
+```
+
 # Keybinds
 ```
 -_ USE NUMPAD KEYS TO MOVE _-
