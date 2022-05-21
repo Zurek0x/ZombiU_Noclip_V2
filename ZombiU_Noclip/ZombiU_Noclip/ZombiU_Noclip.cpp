@@ -17,25 +17,40 @@ DWORD Z_Axis = 0x00DA4C64;
 int Z_Axisint;
 DWORD pID;
 
+DWORD LockAxis_XZ = 0x004B5B1F;
+int LockAxis_XZ_int;
+
+DWORD LockAxis_Y = 0x004B5B23;
+int LockAxis_Y_int;
+
 unsigned int scan_delay = 300;
 
 int Agro = 250000;
 int Dgro = -250000;
+int toggle = 0;
+int der_toggle = 0;
+
+int specify_x;
+int specify_y;
+int specify_z;
 
 void clear() {
 	system("cls");
 }
 
 int main() {
-	SetConsoleTitleA("ZombiU Noclip Cheat [ Version: 1.3.6 ]");
+	SetConsoleTitleA("ZombiU Noclip Cheat [ Version: 1.4.2 ]");
 	// Hook To Process Memory //
 	HWND hwnd = FindWindowA(0, ("ZOMBI"));
 	if (!hwnd) cerr << "CANNOT FIND ZOMBI.EXE" << endl;
 	GetWindowThreadProcessId(hwnd, &pID);
 	HANDLE pHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pID);
 	if (!pHandle) cerr << "ERROR" << endl;
+	// Freeze Player MDO? //
+	
 	// Read Process Memory //
 	cout << "Controls are in [controls.txt] file." << endl;
+	cout << "toggle = " << toggle << endl;
 	while (true) {
 		// clear();
 		Sleep(scan_delay); // Wait for (Time In Miliseconds)
@@ -76,24 +91,34 @@ int main() {
 			WriteProcessMemory(pHandle, (LPVOID)Z_Axis, &Final_BACKWARD, (DWORD)sizeof(Final_BACKWARD), 0);
 			cout << "WriteProcessMemory >> OK // Written To Byte " << Z_Axis << " with " << Final_BACKWARD << endl;
 		}
-		// Specify A Cord //
-		if (GetAsyncKeyState(VK_NUMPAD5)) {
-			int specify_x;
-			int specify_y;
-			int specify_z;
-			cout << "Specify A Cord" << endl;
-			cout << "\nX Cord > ";
-			cin >> specify_x;
-			cout << "\nY Cord > ";
-			cin >> specify_y;
-			cout << "\nZ Cord > ";
-			cin >> specify_z;
-			WriteProcessMemory(pHandle, (LPVOID)X_Axis, &specify_x, (DWORD)sizeof(specify_x), 0);
-			WriteProcessMemory(pHandle, (LPVOID)Y_Axis, &specify_y, (DWORD)sizeof(specify_y), 0);
-			WriteProcessMemory(pHandle, (LPVOID)Z_Axis, &specify_z, (DWORD)sizeof(specify_z), 0);
+		// Toggle Script //
+		if (GetAsyncKeyState(VK_NUMPAD5)) { // ON
+			if (toggle == 0) {
+				toggle = 1;
+				int LockAxis_XZ_hacked = 943885288;
+				int LockAxis_Y_hacked = 2335719818;
+				WriteProcessMemory(pHandle, (LPVOID)LockAxis_XZ, &LockAxis_XZ_hacked, (DWORD)sizeof(LockAxis_XZ_hacked), 0);
+				WriteProcessMemory(pHandle, (LPVOID)LockAxis_Y, &LockAxis_Y_hacked, (DWORD)sizeof(LockAxis_Y_hacked), 0);
+				cout << "WriteProcessMemory >> OK // Written To Byte " << LockAxis_XZ << " with " << LockAxis_XZ_hacked << endl;
+				cout << "WriteProcessMemory >> OK // Written To Byte " << LockAxis_Y << " with " << LockAxis_Y_hacked << endl;
+				cout << LockAxis_XZ_int << endl;
+			}
+			else if (toggle == 1) { // OFF
+				toggle = 0;
+				int LockAxis_XZ_original = 943885104;
+				int LockAxis_Y_original = 2335719817;
+				WriteProcessMemory(pHandle, (LPVOID)LockAxis_XZ, &LockAxis_XZ_original, (DWORD)sizeof(LockAxis_XZ_original), 0);
+				WriteProcessMemory(pHandle, (LPVOID)LockAxis_Y, &LockAxis_Y_original, (DWORD)sizeof(LockAxis_Y_original), 0);
+				cout << "WriteProcessMemory >> OK // Written To Byte " << LockAxis_XZ << " with " << LockAxis_XZ_original << endl;
+				cout << "WriteProcessMemory >> OK // Written To Byte " << LockAxis_Y << " with " << LockAxis_Y_original << endl;
+				cout << LockAxis_XZ_int << endl;
+			}
 		}
 	}
 }
+
+// Original 4 Byte Val - 2335719818
+// Hacked 4 Byte Val - 943885288
 
 //
 //

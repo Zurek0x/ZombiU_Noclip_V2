@@ -1,14 +1,17 @@
 ﻿  ZombiU_Noclip.cpp
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(40,43): warning C4312: 'type cast': conversion from 'DWORD' to 'void *' of greater size
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(41,43): warning C4312: 'type cast': conversion from 'DWORD' to 'void *' of greater size
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(42,43): warning C4312: 'type cast': conversion from 'DWORD' to 'void *' of greater size
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(49,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(54,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(59,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(64,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(69,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(74,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(89,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
-C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(90,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(57,43): warning C4312: 'type cast': conversion from 'DWORD' to 'void *' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(58,43): warning C4312: 'type cast': conversion from 'DWORD' to 'void *' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(59,43): warning C4312: 'type cast': conversion from 'DWORD' to 'void *' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(66,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(71,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(76,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(81,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(86,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
 C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(91,46): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(99,29): warning C4309: 'initializing': truncation of constant value
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(100,52): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(101,51): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(109,31): warning C4309: 'initializing': truncation of constant value
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(110,52): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
+C:\Users\dnfki\source\repos\ZombiU_Noclip\ZombiU_Noclip\ZombiU_Noclip.cpp(111,51): warning C4312: 'type cast': conversion from 'DWORD' to 'LPVOID' of greater size
   ZombiU_Noclip.vcxproj -> C:\Users\dnfki\source\repos\ZombiU_Noclip\x64\Debug\ZombiU_Noclip.exe
