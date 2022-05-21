@@ -1,37 +1,37 @@
 # ZombiU_Noclip
-This is a Mod/Cheat for the Game Zombi & ZombiU Written in C++ and Assembly, This mod requires a few
-base programs like (C++ SDK) and (Cheat Engine) To disable certain Anti-Cheating Locks.
+This is a Mod/Cheat for the Game Zombi & ZombiU Written in C++ and Assembly.
 
 ![alt text](https://raw.githubusercontent.com/Zurek0x/ZombiU_Noclip/main/media/logo.webp)
 
+# Keybinds
+```
+-_ USE NUMPAD KEYS TO MOVE _-
+
+NUMPAD 9 [ Move Up ]
+NUMPAD 3 [ Move Down ]
+
+Numpad 8 [ Move Forward ]
+Numpad 2 [ Move Backward ]
+
+Numpad 4 [ Move Left ]
+Numpad 6 [ Move Right ]
+
+< Custom keys >
+Numpad 5 [ Toggle ON/OFF ]
+
+```
+
 # How To Use
 ```
+[ Make sure ZOMBI.EXE is running in background / ZombiU ]
 1a. Compile the program using the source included
 1b. Or run the EXE included in the (compiled) folder
-2. Make sure Cheat Engine is installed
-3. Open the file (FlyScript.ct) with Cheat Engine
-4. Enable all 3 Tick boxes in the order they are labeled
-
-[ Enable 1 ]
-[ Enable 2 ]
-[ Enable 3 ]
-[Do not tick the Camera XYZ Boxes]
-
-5. Once ticked your game should look differient
-6. Now open the Compiled .exe file labeled (ZombiU_Noclip.exe)
-7. Open the file (controls.txt) for all the controls
-8. To disable the cheat un-tick the boxes.
-
-[ Enable 1 ]
-[ Enable 2 ]
-[ Enable 3 ]
+2. Done!
 
 ```
 
 # Required Programs
 ```
-A. Cheat Engine
-
 [For Source Version]
 B. Visual Studio 2022 LEATEST
 ```
@@ -39,6 +39,12 @@ B. Visual Studio 2022 LEATEST
 ![alt text](https://raw.githubusercontent.com/Zurek0x/ZombiU_Noclip/main/media/banner.jpg)
 
 # Chane-Log
+> Version 1.4.2
+> * Removes requirement of Cheat Engine and Cheat Engine Scripts
+> * Fully dedicated to EXE
+> * Removed Cheat Engine Requirement on README.md
+> * Removed Cheat Engine scripts from source
+>
 > Version 1.3.6
 > * Program is announced fully working and updated
 > * Program is tested and released
