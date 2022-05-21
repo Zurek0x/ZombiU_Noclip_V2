@@ -1,7 +1,7 @@
 # ZombiU_Noclip
 This is a Mod/Cheat for the Game Zombi & ZombiU Written in C++ and Assembly.
 
-![alt text](https://raw.githubusercontent.com/Zurek0x/ZombiU_Noclip/main/media/logo.webp)
+![alt text](https://raw.githubusercontent.com/Zurek0x/ZombiU_FOV_Editor/main/media/logo.webp)
 
 # Known Issues/Bugs
 ```
@@ -34,6 +34,8 @@ Numpad 6 [ Move Right ]
 Numpad 5 [ Toggle ON/OFF ]
 
 ```
+
+![alt text](https://raw.githubusercontent.com/Zurek0x/ZombiU_FOV_Editor/main/media/Screenshot_1.png)
 
 # How To Use
 ```
