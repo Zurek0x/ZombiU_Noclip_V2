@@ -46,8 +46,6 @@ int main() {
 	GetWindowThreadProcessId(hwnd, &pID);
 	HANDLE pHandle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pID);
 	if (!pHandle) cerr << "ERROR" << endl;
-	// Freeze Player MDO? //
-	
 	// Read Process Memory //
 	cout << "Controls are in [controls.txt] file." << endl;
 	cout << "toggle = " << toggle << endl;
@@ -101,7 +99,6 @@ int main() {
 				WriteProcessMemory(pHandle, (LPVOID)LockAxis_Y, &LockAxis_Y_hacked, (DWORD)sizeof(LockAxis_Y_hacked), 0);
 				cout << "WriteProcessMemory >> OK // Written To Byte " << LockAxis_XZ << " with " << LockAxis_XZ_hacked << endl;
 				cout << "WriteProcessMemory >> OK // Written To Byte " << LockAxis_Y << " with " << LockAxis_Y_hacked << endl;
-				cout << LockAxis_XZ_int << endl;
 			}
 			else if (toggle == 1) { // OFF
 				toggle = 0;
@@ -111,7 +108,6 @@ int main() {
 				WriteProcessMemory(pHandle, (LPVOID)LockAxis_Y, &LockAxis_Y_original, (DWORD)sizeof(LockAxis_Y_original), 0);
 				cout << "WriteProcessMemory >> OK // Written To Byte " << LockAxis_XZ << " with " << LockAxis_XZ_original << endl;
 				cout << "WriteProcessMemory >> OK // Written To Byte " << LockAxis_Y << " with " << LockAxis_Y_original << endl;
-				cout << LockAxis_XZ_int << endl;
 			}
 		}
 	}

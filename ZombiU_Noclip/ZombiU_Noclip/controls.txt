@@ -10,4 +10,5 @@ Numpad 4 [ Move Left ]
 Numpad 6 [ Move Right ]
 
 < Custom keys >
-Numpad 5 [ Toggle ON/OFF ]
+Numpad 5 [ Enter Specific Cord ]
+* Does Not Work *
